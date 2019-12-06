@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="note" type="com.example.databinding.Note"/>
+        <variable name="presenter" type="com.example.databinding.ItemPresenter"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:onClick="@{ () -> presenter.onClick(note) }">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp"
+                  android:text="@{ note.title }"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="12sp"
+                  android:text="@{ note.message }" android:layout_marginTop="4dp"/>
+    </LinearLayout>
+</layout>

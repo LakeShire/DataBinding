@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="note" type="com.example.databinding.Note"/>
+        <variable name="presenter" type="com.example.databinding.NoteDetailActivity.Presenter"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+        <LinearLayout android:layout_margin="16dp" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:orientation="vertical">
+            <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:text="@={ note.title }"/>
+
+            <EditText
+                    android:id="@+id/et_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="256dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@={ note.message }"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="DONE"
+                    android:layout_margin="32dp"
+                    android:onClick="@{ () -> presenter.onDone() }"/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

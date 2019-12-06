@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="user" type="com.example.databinding.UserModel"/>/>
+        <variable name="presenter" type="com.example.databinding.LoginActivity.Presenter"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+        <LinearLayout android:layout_margin="16dp" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:orientation="vertical"
+                      android:layout_centerVertical="true">
+            <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:text="@={ user.name }"/>
+
+            <EditText
+                    android:id="@+id/et_password"
+                    android:layout_below="@id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@={ user.password }"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="登录"
+                    android:layout_margin="32dp"
+                    android:onClick="@{ () -> presenter.onClick() }"/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
